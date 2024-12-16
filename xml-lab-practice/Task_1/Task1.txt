@@ -1,0 +1,6 @@
+1) XML Structure and Validation:
+▪ Create a simple XML document representing a book (title, author, publication year,
+ISBN).
+▪ Validate the XML document against a DTD or XSD schema.
+▪ Modify the XML document to introduce errors and validate again to understand error
+messages.
