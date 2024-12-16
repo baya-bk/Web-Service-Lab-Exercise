@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <database>
+        <host>localhost</host>
+        <port>3306</port>
+        <username>root</username>
+        <password>password123</password>
+        <dbname>app_database</dbname>
+    </database>
+    <log>
+        <level>DEBUG</level>
+        <file>app.log</file>
+    </log>
+    <user>
+        <theme>dark</theme>
+        <language>en</language>
+    </user>
+</config>
