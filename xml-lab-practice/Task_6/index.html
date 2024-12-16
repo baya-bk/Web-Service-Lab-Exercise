@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+</head>
+<body>
+    <h1>Book List</h1>
+    <div id="bookList"></div>
+
+    <script>
+        // Fetch the XML data from the API
+        fetch('http://127.0.0.1:5000/books')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, "application/xml");
+
+                const books = xmlDoc.getElementsByTagName('book');
+                let output = '<ul>';
+
+                for (let i = 0; i < books.length; i++) {
+                    const title = books[i].getElementsByTagName('title')[0].textContent;
+                    const author = books[i].getElementsByTagName('author')[0].textContent;
+                    const year = books[i].getElementsByTagName('year')[0].textContent;
+                    const isbn = books[i].getElementsByTagName('isbn')[0].textContent;
+
+                    output += `<li><strong>${title}</strong> by ${author} (${year}) - ISBN: ${isbn}</li>`;
+                }
+
+                output += '</ul>';
+                document.getElementById('bookList').innerHTML = output;
+            })
+            .catch(error => console.error('Error fetching XML:', error));
+    </script>
+</body>
+</html>
