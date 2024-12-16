@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Complex type for book -->
+    <xs:complexType name="bookType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="author" type="xs:string" />
+            <xs:element name="year" type="xs:int" />
+            <xs:element name="isbn" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for magazine -->
+    <xs:complexType name="magazineType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="issue" type="xs:string" />
+            <xs:element name="month" type="xs:string" />
+            <xs:element name="year" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for DVD -->
+    <xs:complexType name="dvdType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="director" type="xs:string" />
+            <xs:element name="year" type="xs:int" />
+            <xs:element name="genre" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Root element library containing books, magazines, and dvds -->
+    <xs:element name="library">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="book" type="bookType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="magazine" type="magazineType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="dvd" type="dvdType" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

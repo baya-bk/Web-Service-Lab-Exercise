@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance http://example.com/library.xsd">
+    <book>
+        <title>XML Programming</title>
+        <author>John Doe</author>
+        <year>2024</year>
+        <isbn>123-456-789</isbn>
+    </book>
+    <magazine>
+        <title>Tech Monthly</title>
+        <issue>January</issue>
+        <month>01</month>
+        <year>2023</year>
+    </magazine>
+    <dvd>
+        <title>Inception</title>
+        <director>Christopher Nolan</director>
+        <year>2010</year>
+        <genre>Sci-Fi</genre>
+    </dvd>
+</library>
