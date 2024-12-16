@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Information</title>
+</head>
+<body>
+    <h1>Book Information</h1>
+    <div id="bookInfo"></div>
+    
+    <script>
+        // Function to load and parse the XML file
+        function loadXMLDoc(filePath) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    displayBookInfo(this);
+                }
+            };
+            xhttp.open("GET", filePath, true);
+            xhttp.send();
+        }
+
+        // Function to display book information
+        function displayBookInfo(xml) {
+            const xmlDoc = xml.responseXML;
+            const title = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            const author = xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+            const year = xmlDoc.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+            const isbn = xmlDoc.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;
+
+            // Display the data in the browser
+            let output = `<table border="1">
+                            <tr><th>Title</th><td>${title}</td></tr>
+                            <tr><th>Author</th><td>${author}</td></tr>
+                            <tr><th>Year</th><td>${year}</td></tr>
+                            <tr><th>ISBN</th><td>${isbn}</td></tr>
+                          </table>`;
+            document.getElementById("bookInfo").innerHTML = output;
+        }
+
+        // Load the book.xml file
+        loadXMLDoc("book.xml");
+    </script>
+</body>
+</html>
