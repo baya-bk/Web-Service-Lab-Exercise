@@ -1,1 +1,7 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<book>
+    <title>XML Programming</title>
+    <author>John Doe</author>
+    <year>2024</year>
+    <isbn>123-456-789</isbn>
+</book>
