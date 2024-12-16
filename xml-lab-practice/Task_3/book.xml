@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book>
+        <title>XML Programming</title>
+        <author>John Doe</author>
+        <year>2024</year>
+        <isbn>123-456-789</isbn>
+    </book>
+    <book>
+        <title>Learning XSLT</title>
+        <author>Jane Smith</author>
+        <year>2022</year>
+        <isbn>987-654-321</isbn>
+    </book>
+    <book>
+        <title>Mastering XPath</title>
+        <author>Michael Brown</author>
+        <year>2023</year>
+        <isbn>555-444-333</isbn>
+    </book>
+</books>
